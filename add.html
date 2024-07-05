@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        h2{
+            background-color: rgb(246, 160, 199);
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        div {
+            background-color: rgb(246, 160, 199);
+            display: flex;
+            justify-content: center;
+            /* align-items: center;*/
+            height: 100vh;
+        }
+
+
+        table {
+            /* border-collapse: collapse; */
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        td {
+            padding: 15px;
+        }
+
+        tr {
+            background-color: palegreen;
+        }
+
+        input {
+            background-color: rgb(246, 160, 199);
+            color: black;
+            border: none;
+            height: 30px;
+            width: 600px;
+        }
+
+        form {
+            width: 800px;
+        }
+
+
+        #sub {
+            width: 130px;
+            text-align: center;
+            height: 40px;
+            font-size: large;
+            text-transform: capitalize;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div>
+        <form action="add" method="post">
+            
+            Student Roll No: <input type="text" onkeypress="return isNumberKey(event);" name="id"> <br>
+            Student Name: <input onkeypress="return allowAlphabetsAndSpace(event);" type="text" name="name"><br>
+       Mathematics: <input type="number" onkeypress="return isNumberKey(event);" name="maths"><br>
+       Science: <input type="number" onkeypress="return isNumberKey(event);" name="science"><br>
+       English: <input type="number" onkeypress="return isNumberKey(event);" name="english"><br>
+       Hindi: <input type="number" onkeypress="return isNumberKey(event);" name="hindi"><br>
+       Arts: <input type="number" onkeypress="return isNumberKey(event);" name="arts" ><br>
+       <input type="submit" onkeypress="return isNumberKey(event);" value="submit">
+    </form>
+</div> -->
+
+    <!-- ================================================================================================== -->
+    <h2>! Enter Student Details ! </h2>
+
+
+    <div>
+
+        <form action="add" method="post">
+            <table>
+                <tr>
+                    <td><label>Student Roll No:</label></td>
+                    <td><input type="text" onkeypress="return isNumberKey(event);" name="id"></td>
+                </tr>
+                <tr>
+                    <td> <label>Student Name: </label></td>
+                    <td><input onkeypress="return allowAlphabetsAndSpace(event);" type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td> <label>Mathematics: </label></td>
+                    <td> <input type="text" onkeypress="return isNumberKey(event);" name="maths"></td>
+                </tr>
+
+                <tr>
+                    <td> <label>Science: </label></td>
+                    <td> <input type="text" onkeypress="return isNumberKey(event);" name="science"></td>
+                </tr>
+                <tr>
+                    <td><label> English: </label></td>
+                    <td> <input type="text" onkeypress="return isNumberKey(event);" name="english"></td>
+                </tr>
+                <tr>
+                    <td><label>Hindi: </label></td>
+                    <td> <input type="text" onkeypress="return isNumberKey(event);" name="hindi"></td>
+                </tr>
+                <tr>
+                    <td><label>Arts: </label></td>
+                    <td> <input type="text" onkeypress="return isNumberKey(event);" name="arts"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="sub">
+
+                        <input type="submit" value="submit" id="sub">
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+    <!-- ============================================================================================== -->
+
+    <script>
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+            return !(charCode > 31 && (charCode < 48 || charCode > 57));
+        }
+        function allowAlphabetsAndSpace(event) {
+            if (event.keyCode === 32) {
+                return true;
+            }
+            if ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)) {
+                return true;
+            }
+            event.preventDefault();
+        }
+
+    </script>
+</body>
+
+</html>
